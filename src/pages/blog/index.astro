@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/MainLayout.astro";
+import { BRAND } from "../../branding";
+import PostList from "../../components/PostList.astro";
+import TopicList from "../../components/TopicList.astro";
+
+const title = BRAND + " - Blog";
+const posts = await getCollection("posts");
+const topics = [...new Set(posts.map((post) => post.data.topics).flat())];
+---
+
+<Layout title={title}>
+    <h3>Topics</h3>
+    <TopicList Topics={topics} />
+    <h3>Posts</h3>
+    <PostList Posts={posts}></PostList>
+</Layout>

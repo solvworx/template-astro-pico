@@ -1,0 +1,48 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    font-style: italic; 
+    margin-top: auto;
+    text-align: center;
+}
+
+.post-date {
+    color: grey;
+    white-space: nowrap;
+}
+
+.post-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-head .post-date {
+    margin-left: 20px;
+}
+
+.post-title {
+    color: grey;
+    font-size: larger;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.post-topic {
+    margin-left: 8px;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+.post-topics {
+    color: grey;
+    font-size: smaller;
+    margin: 4px;
+    text-align: center;
+}

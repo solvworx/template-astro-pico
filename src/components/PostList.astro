@@ -1,0 +1,20 @@
+---
+const { Posts } = Astro.props;
+Posts.sort((a,b) => a.data.date < b.data.date ? 1 : -1);
+---
+
+<div class="post-list">
+    {
+        Posts.map((post) => (
+            <div class="post-row">
+                <a class="post-link" href={`/blog/${post.slug}`} >
+                    {post.data.title}
+                </a>
+                &bull;
+                <span class="post-date">
+                    {new Date(post.data.date).toISOString().split("T")[0]}
+                </span>
+            </div>
+        ))
+    }
+</div>

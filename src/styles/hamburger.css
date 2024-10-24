@@ -1,0 +1,62 @@
+/* This file contains ONLY the CSS needed for the hamburger menu to work.
+ * We assume other styling is handled by Pico itself, or another css stylesheet.
+ */
+
+#menu-list li {
+  display: inline-block;
+}
+
+#menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+#menu-check {
+  display: none;
+}
+  
+/* Pico default breakpoints: small 576 or medium 768 */
+@media (max-width: 576px) {
+  #menu-icon {
+    display: block;
+  }
+
+  #menu-list {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: -100%;
+    margin-left: 0;
+    text-align: center;
+    background: #333333;    /* adjustable */
+    top: 90px;              /* adjustable */
+    transition: all .5s;    /* adjustable */
+  }
+
+  #menu-list li {
+    display: block;
+  }
+
+  #menu-check:checked ~ #menu-list {
+    left: 0;
+  }
+
+  #menu-open {
+    display: block;
+  }
+
+  #menu-close {
+    display: none;
+  }
+
+  #menu-check:checked ~ #menu-icon #menu-open {
+    display: none;
+  }
+
+  #menu-check:checked ~ #menu-icon #menu-close {
+    display: block;
+  }
+
+}
+  

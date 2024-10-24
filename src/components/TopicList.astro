@@ -1,0 +1,12 @@
+---
+const { Topics } = Astro.props;
+Topics.sort((a,b) => a < b ? -1 : 1);
+---
+
+<div class="post-topics">
+    {
+        Topics.map((topic) => (
+            <a class="post-topic" href={`/topics/${topic}`}>#{topic}</a>
+        ))
+    }
+</div>

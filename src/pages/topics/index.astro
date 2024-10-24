@@ -1,0 +1,23 @@
+---
+/* NOTE: no links to this page, but needed in case nav by URL */
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/MainLayout.astro";
+import { BRAND } from "../../branding";
+
+const title = BRAND + " - Topics";
+const posts = await getCollection("posts");
+const topics = [...new Set(posts.map((post) => post.data.topics).flat())];
+---
+
+<Layout title={title}>
+    <h2>Topics</h2>
+    <div class="topic-list">
+        {
+            topics.map((topic) => (
+                <div class="topic-row">
+                    <a href={`/topics/${topic}`}>{topic}</a>
+                </div>
+            ))
+        }
+    </div>
+</Layout>

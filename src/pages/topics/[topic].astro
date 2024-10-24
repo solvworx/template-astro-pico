@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/MainLayout.astro";
+import { BRAND } from "../../branding";
+import PostList from "../../components/PostList.astro";
+
+
+
+export async function getStaticPaths() {
+    const posts = (await getCollection("posts"));
+    const topics = [...new Set(posts.flatMap((post) => post.data.topics))];
+
+    return topics.map((topic) => ({
+        params: { topic }
+    }));
+}
+
+const { topic } = Astro.params;
+const onTopic = (await getCollection("posts")).filter((post) => (topic && post.data.topics.includes(topic)));
+const title = BRAND + " - #" + topic;
+---
+
+<Layout title={title}>
+    <h3>#{topic?.toLowerCase()}</h3>
+    <PostList Posts={onTopic}></PostList>
+</Layout>
