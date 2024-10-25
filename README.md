@@ -15,18 +15,26 @@ _Minimal starter template for sites/blogs using Astro & Pico_
   - see gist: [Pico-Burger](https://gist.github.com/solvworx/03adcc09b237c240bcdc90605718f909)
 
 ### Getting Started
-
-- Branding
-  - modify `./src/branding.ts` with your ...
-    - **BRAND** - used in header and tab titles
-    - **ENTITY** - used in footer copyright
-    - **AUTHOR** - used only in meta tag 
-    - replace `./public/favicon.svg` _(optional)_
-- Pages _(as html)_
-  - **Home** - modify `./src/pages/index.astro`
-  - **About** - modify `./src/pages/about.astro`
-- Posts _(as markdown)_
-  - Replace _sample_ posts in `./src/content/posts` with _actual_ posts 
+- Create a new repo from template
+  - see [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+- Clone the newly created repo (not the template)
+  - see [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+- Install Astro into the project
+  - From the directory of the new project, run `npm install astro`
+    - see [Astro - Manual Setup](https://docs.astro.build/en/install-and-setup/#manual-setup)
+  - To verify correct setup, run `npm run dev`
+- Customizing the project
+  - Branding
+    - modify `./src/branding.ts` with your ...
+      - **BRAND** - used in header and tab titles
+      - **ENTITY** - used in footer copyright
+      - **AUTHOR** - used only in meta tag 
+      - replace `./public/favicon.svg` _(optional)_
+  - Pages _(as html)_
+    - **Home** - modify `./src/pages/index.astro`
+    - **About** - modify `./src/pages/about.astro`
+  - Posts _(as markdown)_
+    - Replace _sample_ posts in `./src/content/posts` with _actual_ posts 
 
 ### Post Frontmatter
 - Fields
